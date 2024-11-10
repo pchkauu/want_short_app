@@ -2,8 +2,8 @@
 
 import 'dart:io';
 
-import 'package:short/src/core/_barrel.dart';
 import 'package:flutter/foundation.dart';
+import 'package:short/src/core/_barrel.dart';
 
 class CurrentPlatform {
   late final DetectedPlatform detected;
@@ -36,6 +36,10 @@ class CurrentPlatform {
   }
 
   Future<DetectedPlatform> _detectPlatform() async {
+    if (kIsWeb) {
+      return DetectedPlatform.web;
+    }
+
     if (Platform.isAndroid) {
       final isPhysical = await DeviceHelper.isPhysical();
 
@@ -66,10 +70,6 @@ class CurrentPlatform {
 
     if (Platform.isLinux) {
       return DetectedPlatform.linux;
-    }
-
-    if (kIsWeb) {
-      return DetectedPlatform.web;
     }
 
     return DetectedPlatform.unknown;

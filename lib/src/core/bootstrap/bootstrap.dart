@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:short/src/core/_barrel.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/services.dart';
+import 'package:short/src/core/_barrel.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
 final _bootstrapSteps = [
@@ -51,6 +51,7 @@ Future<void> foregroundBootstrapAsync() async {
   if (_bootstrapCompleted) {
     return;
   }
+
   Log.d('Step:i');
 
   await CurrentPlatform.instance.init();
