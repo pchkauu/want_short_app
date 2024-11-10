@@ -7,3 +7,4 @@ export 'injection/_barrel.dart';
 export 'l10n/_barrel.dart';
 export 'log/_barrel.dart';
 export 'platform/_barrel.dart';
+export 'ui_kit/_barrel.dart';

@@ -61,6 +61,7 @@ dev_dependencies:
   auto_route_generator: ^8.0.0
   build_runner: ^2.4.9
   change_app_package_name: ^1.1.0
+  flutter_gen_runner: ^5.8.0
   flutter_launcher_icons: ^0.14.1
   flutter_lints: ^5.0.0
   flutter_native_splash: ^2.4.0
@@ -71,6 +72,48 @@ dev_dependencies:
   json_serializable: ^6.7.1
   rename_app: ^1.3.2
 
+flutter_gen:
+  package_parameter_enabled: true
+  output: lib/src/core/ui_kit/gen/
+  line_length: 80
+
+  integrations:
+    flutter_svg: true
+
+  colors:
+    inputs:
+      - asset/color/colors.xml
+
+
 flutter:
   generate: true
   uses-material-design: true
+
+  assets:
+    - asset/
+    - asset/app/
+    - asset/color/
+    - asset/font/
+    - asset/font/unbounded/
+
+  fonts:
+    - family: Unbounded
+      fonts:
+        - asset: asset/font/unbounded/Unbounded-ExtraLight.ttf
+          weight: 100
+        - asset: asset/font/unbounded/Unbounded-Light.ttf
+          weight: 200
+        - asset: asset/font/unbounded/Unbounded-Light.ttf
+          weight: 300
+        - asset: asset/font/unbounded/Unbounded-Regular.ttf
+          weight: 400
+        - asset: asset/font/unbounded/Unbounded-Medium.ttf
+          weight: 500
+        - asset: asset/font/unbounded/Unbounded-SemiBold.ttf
+          weight: 600
+        - asset: asset/font/unbounded/Unbounded-Bold.ttf
+          weight: 700
+        - asset: asset/font/unbounded/Unbounded-ExtraBold.ttf
+          weight: 800
+        - asset: asset/font/unbounded/Unbounded-Black.ttf
+          weight: 900

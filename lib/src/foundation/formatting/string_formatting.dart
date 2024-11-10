@@ -1,5 +1,5 @@
 extension StringX on String {
-  /// 123 000.31 => 123000.31
+  /// _barrel.dart 000.31 => 123000.31
   String get formatCurrency {
     return replaceAll(RegExp(r'[^\d.]'), '');
   }
@@ -11,7 +11,8 @@ extension StringX on String {
     final onlyNumber = RegExp(r'^\d+$');
 
     if (onlyNumber.hasMatch(this) && length == 16) {
-      final upd = replaceAllMapped(RegExp('.{4}'), (match) => '${match.group(0)} ');
+      final upd =
+          replaceAllMapped(RegExp('.{4}'), (match) => '${match.group(0)} ');
 
       return upd;
     }
@@ -19,7 +20,7 @@ extension StringX on String {
     return this;
   }
 
-  /// 123000.3 => 123 000.30
+  /// 123000.3 => _barrel.dart 000.30
   String get formatPrettyCurrency {
     // Parse the string to a double
     final value = double.tryParse(this) ?? 0;
@@ -36,7 +37,8 @@ extension StringX on String {
       if (formatted.endsWith('.00')) {
         formatted = formatted.substring(0, formatted.length - 3);
       }
-      return formatted.replaceAllMapped(RegExp(r'\B(?=(\d{3})+(?!\d))'), (match) => ' ');
+      return formatted.replaceAllMapped(
+          RegExp(r'\B(?=(\d{3})+(?!\d))'), (match) => ' ');
     }
   }
 }

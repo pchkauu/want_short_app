@@ -17,6 +17,8 @@ class WantShortMaterialApp extends StatelessWidget {
           title: AppConstant.name,
           debugShowCheckedModeBanner: false,
           locale: S.defaultLocale,
+          themeMode: ThemeMode.light,
+          theme: _primaryTheme,
           supportedLocales: S.supportedLocales,
           localizationsDelegates: S.localizationDelegates,
           routerConfig: appRouter.config(
@@ -24,6 +26,16 @@ class WantShortMaterialApp extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+
+  ThemeData get _primaryTheme {
+    return ThemeData(
+      fontFamily: 'Unbounded',
+      primaryColor: ColorName.blue,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: ColorName.blue,
+      ),
     );
   }
 }
